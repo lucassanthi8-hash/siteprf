@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿??ï»¿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,6 @@
         })();
     </script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         
         #ie-edit-panel {
@@ -177,7 +176,7 @@
         <div class="container">
             <div class="top-header-content">
                 <div class="logo-governo" style="display: flex; align-items: center; gap: 15px;">
-                    <img src="../assets/img/gov_br.png" alt="Secretaria da Segurança Pública" style="height: 80px; width: auto;">
+                    <a href="index.html" class="gov-logo-link"><img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;"></a>
                     <div class="text-governo">
                         <span class="sao-paulo">SÃO PAULO - JAGUARÉ</span>
                         <span class="governo">MINISTÉRIO DA JUSTIÇA E SEGURANÇA PÚBLICA</span>
@@ -222,41 +221,26 @@
     <header class="main-header" id="menu">
         <div class="container">
             <div class="main-header-content">
-                <div class="logo-pm">
-                    <div class="pm-emblem">
-                        <img src="../images/Logo_PMESP.png" alt="Polícia Rodoviária Federal">
-                    </div>
-                    <div class="pm-text">
-                        <h1>POLÍCIA RODOVIÁRIA FEDERAL</h1>
-                        <p>Ministério da Justiça e Segurança Pública</p>
-                    </div>
-                </div>
                 <nav class="main-nav">
-                    <a href="#noticias">INÍCIO</a>
-                    <span class="nav-divider">|</span>
+                    <a href="/index.html">INÍCIO</a>
                     <div class="nav-dropdown">
                         <a href="#" class="nav-link-dropdown">INSTITUCIONAL</a>
                         <div class="dropdown-menu">
-                            <a href="/organograma">Organograma</a>
-                            <a href="/capacitacao">Capacitação e Treinamento</a>
-                            <a href="/cancao-pm">História e Valores</a>
+                            <a href="organograma.html">Organograma</a>
+                            <a href="/capacitacao.html">Capacitação e Treinamento</a>
+                            <a href="/historia-valores.html">História e Valores</a>
                         </div>
                     </div>
-                    <span class="nav-divider">|</span>
                     <div class="nav-dropdown">
                         <a href="#" class="nav-link-dropdown">SERVIÇOS</a>
-                        <div class="dropdown-menu">
+                          <div class="dropdown-menu">
                             <a href="/documentos">Documentos PRF</a>
-                            <a href="/preencher-bopm">Preencher BOU</a>
+                            <a href="/preencher-bou.html">Preencher BOU</a>
                         </div>
                     </div>
-                    <span class="nav-divider">|</span>
                     <a href="/concursos">CONCURSOS</a>
-                    <span class="nav-divider">|</span>
                     <a href="/diario-oficial">DIÁRIO OFICIAL</a>
-                    <span class="nav-divider">|</span>
                     <a href="#" class="nav-link" onclick="if(typeof window.openCorregedoriaWidget === 'function') { window.openCorregedoriaWidget(); return false; } else { window.openTicketsWidget && window.openTicketsWidget(); return false; }">CORREGEDORIA</a>
-                    <span class="nav-divider">|</span>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Menu">
                     <i class="fas fa-bars"></i>
@@ -282,23 +266,26 @@
                                 <span class="rumo"></span>
                                 <div class="number-200"></div>
                                 <span class="anos"></span>
+                                <span class="arrow-right"></span>
                             </div>
                         </div>
-                        <div class="banner-slogan">
-                 </div>
+                        <div class="banner-slogan"></div>
+                    </div>
+                </div>
+                <div class="banner-right">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="pm-numbers">
+    <section class="prf-numbers">
         <div class="container">
             <div class="numbers-header">
-                <h2>PRF EM NÚMEROS</h2>
-                <p>Acompanhe em tempo real estatística pertinentes à PRF</p>
+                <img src="/assets/img/prf.png" alt="Brasão PRF" class="logo-prf-menu">
+                <h2><strong>PRF</strong> EM NÚMEROS</h2>
+                <p>Acompanhe algumas estatísticas da PRF em 2026 em tempo real.</p>
             </div>
             <div class="numbers-grid" id="numbers-grid">
-                
-
         </div>
     </section>
 
@@ -316,43 +303,10 @@
         </div>
     </section>
 
-    <section class="latest-news" id="videos-190">
-        <div class="container">
-            <div class="news-header">
-                <h2>Vídeo <strong>190</strong></h2>
-                <div class="red-line-news"></div>
-            </div>
-            <div class="news-grid" id="videos-190-grid">
-                
-            </div>
-        </div>
-    </section>
-
-    <section class="activities cultural">
-        <div class="container">
-            <div class="activities-header">
-                <h2>Atividades <strong>Culturais</strong></h2>
-                <div class="red-line-news"></div>
-            </div>
-            <div class="activities-grid" id="cultural-activities-grid">
-            </div>
-        </div>
-    </section>
-
-    <section class="activities community">
-        <div class="container">
-            <div class="activities-header">
-                <h2>Atividades <strong>Comunitárias</strong></h2>
-                <div class="red-line-news"></div>
-            </div>
-            <div class="activities-grid" id="community-activities-grid">
-        </div>
-    </section>
-
     <section class="activities education">
         <div class="container">
             <div class="activities-header">
-                <h2>Diretoria de <strong>Ensino</strong></h2>
+                <h2>Notícias <strong>Institucionais</strong>
                 <div class="red-line-news"></div>
             </div>
             <div class="activities-grid" id="education-activities-grid">
@@ -362,7 +316,6 @@
 
     <script src="app.js" defer></script>
     
-
     <div id="lista-aprovados-modal" class="modal" style="display: none;">
         <div class="modal-content" style="max-width: 800px; max-height: 90vh; overflow-y: auto; background: white; border-radius: 12px; padding: 30px;">
             <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">

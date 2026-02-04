@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
         <div class="container">
             <div class="top-header-content">
                 <div class="logo-governo" style="display: flex; align-items: center; gap: 15px;">
-                   <img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;">
+                    <a href="index.html" class="gov-logo-link"><img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;"></a>
                     <div class="text-governo">
                         <span class="sao-paulo">SÃO PAULO - JAGUARÉ</span>
                         <span class="governo">MINISTÉRIO DA JUSTIÇA E SEGURANÇA PÚBLICA</span>
@@ -81,18 +81,9 @@
     <header class="main-header" id="menu">
         <div class="container">
             <div class="main-header-content">
-                <div class="logo-pm">
-                    <div class="pm-emblem">
-                        <img src="assets/img/prf.png" alt="Polícia Rodoviária Federal">
-                    </div>
-                    <div class="pm-text">
-                        <h1>POLÍCIA RODOVIÁRIA FEDERAL</h1>
-                        <p>Ministério da Justiça e Segurança Pública</p>
-                    </div>
-                </div>
                 <nav class="main-nav">
-                    <a href="index.html#noticias">INÍCIO</a>
-                    <span class="nav-divider">|</span>
+                    <a href="/index.html">INÍCIO</a>
+                    
                     <div class="nav-dropdown">
                         <a href="#" class="nav-link-dropdown">INSTITUCIONAL</a>
                         <div class="dropdown-menu">
@@ -101,19 +92,19 @@
                             <a href="historia-valores.html">História e Valores</a>
                         </div>
                     </div>
-                    <span class="nav-divider">|</span>
+                    
                     <div class="nav-dropdown">
                         <a href="#" class="nav-link-dropdown">SERVIÇOS</a>
                         <div class="dropdown-menu">
                             <a href="documentos.html">Documentos PRF</a>
-                            <a href="preencher-bopm.html">Preencher BOU</a>
+                            <a href="preencher-bou.html">Preencher BOU</a>
                         </div>
                     </div>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="concursos.html">CONCURSOS</a>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="diario-oficial.html">DIÁRIO OFICIAL</a>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="#" class="nav-link" onclick="if(typeof window.openCorregedoriaWidget === 'function') { window.openCorregedoriaWidget(); return false; } else { window.openTicketsWidget && window.openTicketsWidget(); return false; }">CORREGEDORIA</a>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Menu">
@@ -130,20 +121,62 @@
                 <h2>História e Valores</h2>
                 <div class="red-line-news"></div>
             </div>
-            <div class="info-grid">
-                <article class="info-card">
-                    <h3>Historia institucional</h3>
-                    <p>Marcos e conquistas que moldaram a unidade.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Valores</h3>
-                    <p>Disciplina, respeito, transparencia e compromisso.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Missao</h3>
-                    <p>Servir e proteger com excelencia e proximidade.</p>
-                </article>
+            <div class="historia-section">
+                <div class="info-card">
+                    <h3>HISTÓRIA</h3>
+                    <p>A Polícia Rodoviária Federal foi criada pelo presidente Washington Luiz no dia 24 de julho de 1928 (dia da Polícia Rodoviária Federal), com a denominação inicial de “Polícia de Estradas”. Em 1935 Antônio Felix Filho, o “Turquinho”, considerado o 1º Patrulheiro Rodoviário Federal, foi chamado para organizar a vigilância das rodovias Rio-Petropólis, Rio-São Paulo e União Indústria.
+
+                        Sua missão era percorrer e fiscalizar as três rodovias utilizando duas motocicletas Harley Davidson e nessa empreitada contava com a ajuda de cerca de 450 vigias da então Comissão de Estradas de Rodagem (CER).
+                    </p>
+                    <br>
+                    <p>
+                           Em 23 de julho de 1935 (dia do Policial Rodoviário Federal), foi criado o primeiro quadro de policiais da hoje Polícia Rodoviária Federal, denominados, a época, “Inspetores de Tráfego”. No ano de 1945, já com a denominação de Polícia Rodoviária Federal, a corporação foi vinculada ao extinto Departamento Nacional de Estradas de Rodagem (DNER).
+                    </p>
+                    <br>
+                    <p>
+                        Finalmente, em 1988, com o advento da Constituinte, a Polícia Rodoviária Federal foi integrada ao Sistema Nacional de Segurança Pública, recebendo como missão exercer o patrulhamento ostensivo das rodovias federais. Desde 1991, a Polícia Rodoviária Federal integra a estrutura organizacional do Ministério da Justiça, como Departamento de Polícia Rodoviária Federal
+                    </p>
+                    <br>
+                    <p>
+                        Atualmente, a Polícia Rodoviária Federal tem sob sua responsabilidade a segurança viária e a prevenção e repressão qualificada ao crime em mais de 75 mil quilômetros de rodovias e estradas federais em todos os estados brasileiros e nas áreas de interesse da União. Uma instituição que provê a pronta resposta federal  às mais diversas demandas de segurança pública do Brasil.
+                    </p>
+                    <br>
+                </div>
+                <div class="historia-image">
+                    <img src="assets/img/prf_antigo.png" alt="Brasão Antigo PRF" subtitle>
+                </div>  
             </div>
+            <div class="valores-section">
+                <div class="valores-image">
+                    <img src="assets/img/azeredo_maria_alunos.png" alt="Azeredo Maria alunos">
+                </div>
+                <div class="valores-section">
+                    <div class="info-card">
+                        <img src="assets/img/missao_valores.png">
+                    </div>        
+                </div>
+
+            </div>
+            <br>
+            <div class="texto-section">
+                <div class="info-card">
+                    <h3>ATUAÇÃO DA PRF</h3>
+                    <p>As áreas de atuação da PRF são fundamentais para a manutenção da segurança nas rodovias do Brasil. Cada área desempenha um papel específico, contribuindo para a eficiência e eficácia do trabalho policial. Entre essas áreas, destacam-se:</p>
+                    <br>
+                    <ul>
+                        <li> <strong>Fiscalização de Trânsito: </strong>Foca na aplicação das leis de trânsito, garantindo que motoristas e veículos sigam as normas estabelecidas.</li>
+                        <li><strong>Combate ao Crime: </strong>Envolvem ações para deter atividades ilegais nas estradas, como contrabando e tráfico de drogas.</li>
+                        <li><strong>Atividades de Resgate: </strong>Incluem intervenções em acidentes e assistência a vítimas, focando na segurança e bem-estar dos cidadãos.</li>
+                        <li><strong>Educação para o Trânsito: </strong>Promove campanhas educativas para conscientizar motoristas e pedestres sobre práticas seguras nas estradas.</li>
+                        <li><strong>Constatação de Infrações: </strong>Realiza a aplicação de multas e penalidades para infratores, garantindo um trânsito mais seguro.</li>
+                    </ul>
+                    <br>
+                    <p>
+                        Cada uma dessas áreas exige conhecimentos e habilidades específicas. Os profissionais da PRF devem estar preparados para lidar com situações diversas, por isso, investem em treinamentos permanentes e na atualização de conhecimentos.
+                        O papel da PRF é vital para a segurança pública, e a diversidade de áreas de atuação permite uma resposta ágil e adequada a diferentes desafios, promovendo a integridade nas rodovias.
+                    </p>
+                </div>
+             </div>
         </div>
     </section>
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
         <div class="container">
             <div class="top-header-content">
                 <div class="logo-governo" style="display: flex; align-items: center; gap: 15px;">
-                    <img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;">
+                    <a href="index.html" class="gov-logo-link"><img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;"></a>
                     <div class="text-governo">
                         <span class="sao-paulo">SÃO PAULO - JAGUARÉ</span>
                         <span class="governo">MINISTÉRIO DA JUSTIÇA E SEGURANÇA PÚBLICA</span>
@@ -81,18 +81,9 @@
     <header class="main-header" id="menu">
         <div class="container">
             <div class="main-header-content">
-                <div class="logo-pm">
-                    <div class="pm-emblem">
-                        <img src="assets/img/prf.png" alt="Polícia Rodoviária Federal">
-                    </div>
-                    <div class="pm-text">
-                        <h1>POLÍCIA RODOVIÁRIA FEDERAL</h1>
-                        <p>Ministério da Justiça e Segurança Pública</p>
-                    </div>
-                </div>
                 <nav class="main-nav">
-                    <a href="index.html#noticias">INÍCIO</a>
-                    <span class="nav-divider">|</span>
+                    <a href="/index.html">INÍCIO</a>
+                    
                     <div class="nav-dropdown">
                         <a href="#" class="nav-link-dropdown">INSTITUCIONAL</a>
                         <div class="dropdown-menu">
@@ -101,19 +92,19 @@
                             <a href="historia-valores.html">História e Valores</a>
                         </div>
                     </div>
-                    <span class="nav-divider">|</span>
+                    
                     <div class="nav-dropdown">
                         <a href="#" class="nav-link-dropdown">SERVIÇOS</a>
                         <div class="dropdown-menu">
                             <a href="documentos.html">Documentos PRF</a>
-                            <a href="preencher-bopm.html">Preencher BOU</a>
+                            <a href="preencher-bou.html">Preencher BOU</a>
                         </div>
                     </div>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="concursos.html">CONCURSOS</a>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="diario-oficial.html">DIÁRIO OFICIAL</a>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="#" class="nav-link" onclick="if(typeof window.openCorregedoriaWidget === 'function') { window.openCorregedoriaWidget(); return false; } else { window.openTicketsWidget && window.openTicketsWidget(); return false; }">CORREGEDORIA</a>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Menu">
@@ -126,23 +117,37 @@
 
     <section class="latest-news info-section">
         <div class="container">
-            <div class="news-header">
+             <div class="news-header">
                 <h2>Capacitação e Treinamento</h2>
-                <div class="red-line-news"></div>
+             <div class="red-line-news"></div>
+             </div>
+            <div class="red-line-news"></div>
+                <img src="/assets/img/foto_uniprf.png" class="centralizar-foto">
+            <div class="info-card">
+                <p>
+                    A <strong>UniPRF</strong> é um centro de formação para servidores públicos de todas esferas e responsável pela capacitação e treinamento dos agentes da PRF.
+                </p>
+                <br>
+                <p>
+                    Localizada na cidade de São Paulo, no bairro do Jaguaré, a Universidade Corporativa da Polícia Rodoviária Federal (UniPRF) é a unidade responsável por coordenar toda a atividade de formação, capacitação, atualização e especialização dos servidores da Polícia Rodoviária Federal.
+                </p>
+                <br>
+                <p>Desde sua instituição, em 2014, a UniPRF tem se consolidado não apenas como uma escola da Polícia Rodoviária Federal, mas como um centro de capacitação voltado também a servidores públicos da União, estados e municípios.</p>
+                <br>
+                <p>A localização estratégica na capital paulista - com ampla oferta de transporte, serviços e infraestrutura urbana, além de variadas opções de hospedagem e facilidades logísticas - soma-se às modernas e confortáveis instalações do campus e a um corpo docente nacionalmente reconhecido, posicionando a UniPRF como escolha prioritária de diversos órgãos públicos (ligados ou não à área de segurança) no momento de capacitar seus servidores.</p>
+                <br>
+                <p>As atividades desenvolvidas pela UniPRF possibilitam o fortalecimento da qualidade do ensino público profissionalizante, indo muito além de disciplinas e temas exclusivamente policiais, garantindo a outros entes públicos a oportunidade de usufruir da estrutura de nossa universidade corporativa e da expertise acumulada por nossos profissionais de ensino ao longo dos últimos 25 anos, período em que o ensino da PRF se estruturou até alcançar o padrão existente nos dias atuais.</p>
             </div>
-            <div class="info-grid">
-                <article class="info-card">
-                    <h3>Formacao continua</h3>
-                    <p>Atualizacoes regulares para equipes operacionais.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Treinos taticos</h3>
-                    <p>Simulacoes e protocolos de abordagem segura.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Atendimento humanizado</h3>
-                    <p>Capacitacao em mediacao e escuta ativa.</p>
-                </article>
+            <br>
+            <br>
+            <div class="info-card">
+            <h3 class="info-card-title-center"> 
+                CURSOS FORNECIDOS PELA UNIPRF
+            </h3>
+                <img src="assets/img/cursos_1.png" class="centralizar-foto">
+                <img src="assets/img/cursos_2.png" class="centralizar-foto">
+                <img src="assets/img/cursos_3.png" class="centralizar-foto">
+
             </div>
         </div>
     </section>
@@ -150,3 +155,6 @@
     <script src="app.js" defer></script>
 </body>
 </html>
+
+
+

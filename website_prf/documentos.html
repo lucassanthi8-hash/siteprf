@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
         <div class="container">
             <div class="top-header-content">
                 <div class="logo-governo" style="display: flex; align-items: center; gap: 15px;">
-                    <img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;">
+                    <a href="index.html" class="gov-logo-link"><img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;"></a>
                     <div class="text-governo">
                         <span class="sao-paulo">SÃO PAULO - JAGUARÉ</span>
                         <span class="governo">MINISTÉRIO DA JUSTIÇA E SEGURANÇA PÚBLICA</span>
@@ -81,18 +81,9 @@
     <header class="main-header" id="menu">
         <div class="container">
             <div class="main-header-content">
-                <div class="logo-pm">
-                    <div class="pm-emblem">
-                        <img src="assets/img/prf.png" alt="Polícia Rodoviária Federal">
-                    </div>
-                    <div class="pm-text">
-                        <h1>POLÍCIA RODOVIÁRIA FEDERAL</h1>
-                        <p>Ministério da Justiça e Segurança Pública</p>
-                    </div>
-                </div>
                 <nav class="main-nav">
-                    <a href="index.html#noticias">INÍCIO</a>
-                    <span class="nav-divider">|</span>
+                    <a href="/index.html">INÍCIO</a>
+                    
                     <div class="nav-dropdown">
                         <a href="#" class="nav-link-dropdown">INSTITUCIONAL</a>
                         <div class="dropdown-menu">
@@ -101,19 +92,19 @@
                             <a href="historia-valores.html">História e Valores</a>
                         </div>
                     </div>
-                    <span class="nav-divider">|</span>
+                    
                     <div class="nav-dropdown">
                         <a href="#" class="nav-link-dropdown">SERVIÇOS</a>
                         <div class="dropdown-menu">
                             <a href="documentos.html">Documentos PRF</a>
-                            <a href="preencher-bopm.html">Preencher BOU</a>
+                            <a href="preencher-bou.html">Preencher BOU</a>
                         </div>
                     </div>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="concursos.html">CONCURSOS</a>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="diario-oficial.html">DIÁRIO OFICIAL</a>
-                    <span class="nav-divider">|</span>
+                    
                     <a href="#" class="nav-link" onclick="if(typeof window.openCorregedoriaWidget === 'function') { window.openCorregedoriaWidget(); return false; } else { window.openTicketsWidget && window.openTicketsWidget(); return false; }">CORREGEDORIA</a>
                 </nav>
                 <button class="mobile-menu-toggle" aria-label="Menu">
@@ -126,24 +117,20 @@
 
     <section class="latest-news info-section">
         <div class="container">
-            <div class="news-header">
-                <h2>Documentos PRF</h2>
-                <div class="red-line-news"></div>
-            </div>
-            <div class="info-grid">
-                <article class="info-card">
-                    <h3>Normas internas</h3>
-                    <p>Diretrizes e comunicados oficiais para consulta.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Relatorios</h3>
-                    <p>Dados consolidados e informativos periodicos.</p>
-                </article>
-                <article class="info-card">
-                    <h3>Formularios</h3>
-                    <p>Modelos para solicitacoes e procedimentos.</p>
-                </article>
-            </div>
+             <div class="news-header">
+                <h2>Documentos e Normativas</h2>
+                    <div class="red-line-news">
+                    </div>
+             </div>    
+             <br>
+             <a href="https://www.gov.br/prf/pt-br/acesso-a-informacao/institucional/base-juridica">
+                 <div class="info-card info-card-inline">
+                    <div class="image-small">
+                        <img src="/assets/img/logo_relatorio.png" alt="Base Jurídica">
+                    </div>
+                    <h3>Base Jurídica</h3>
+                </div> 
+             </a>
         </div>
     </section>
 

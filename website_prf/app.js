@@ -1,14 +1,12 @@
-(() => {
+﻿(() => {
   'use strict';
 
   const data = {
     period: 'JANEIRO A DEZEMBRO DE 2026',
     numbers: [
-      { value: '18.420', label: 'abordagens', description: 'Operacoes preventivas' },
-      { value: '1.260', label: 'prissoes', description: 'Em flagrante' },
-      { value: '940', label: 'ocorrencias', description: 'Atendidas pela RP' },
-      { value: '320', label: 'veiculos', description: 'Recuperados' },
-      { value: '210', label: 'apoios', description: 'Interagencias' }
+      { value: '2.810', label: 'abordagens', description: 'Realizadas' },
+      { value: '940', label: 'ocorrencias', description: 'Atendidas' },
+      { value: '67', label: 'veículos', description: 'Recuperados' },
     ],
     news: [
       {
@@ -58,32 +56,6 @@
         summary: 'Redistribuicao estrategica para reduzir tempos de resposta.',
         date: '12/02/2026',
         image: 'assets/img/logo_relatorio.png'
-      }
-    ],
-    videos: [
-      {
-        title: 'Resumo 190 - Janeiro',
-        summary: 'Atendimentos e principais destaques do mes.',
-        date: '31/01/2026',
-        image: 'assets/img/logo_inteligencia.png'
-      },
-      {
-        title: 'Boas praticas de patrulha',
-        summary: 'Procedimentos padronizados e abordagens seguras.',
-        date: '10/02/2026',
-        image: 'assets/img/logo_config.png'
-      },
-      {
-        title: 'Tecnologia e apoio operacional',
-        summary: 'Uso de ferramentas para ganho de eficiencia.',
-        date: '14/02/2026',
-        image: 'assets/img/logo_organograma.png'
-      },
-      {
-        title: 'Integracao com a comunidade',
-        summary: 'Projetos locais e aproximacao com moradores.',
-        date: '18/02/2026',
-        image: 'assets/img/logo_inicio.png'
       }
     ],
     activities: {
@@ -223,10 +195,59 @@
 
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
+  const formatNumber = (value, template) => {
+    const digits = String(value).replace(/\D/g, '');
+    const formatted = Number(digits).toLocaleString('pt-BR');
+    if (!template) return formatted;
+    return template.replace(/[0-9.]+/g, formatted);
+  };
+
+  const animateOdometer = (element) => {
+    if (!element) return;
+    const targetRaw = element.getAttribute('data-target') || element.textContent;
+    const digits = String(targetRaw).replace(/\D/g, '');
+    const target = Number(digits);
+    if (!Number.isFinite(target)) return;
+
+    const duration = 3500;
+    const startTime = window.performance.now();
+
+    const step = (now) => {
+      const progress = Math.min(1, (now - startTime) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(target * eased);
+      element.textContent = formatNumber(current, targetRaw);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
+
+  const updateNumbersGridLayout = () => {
+    const grid = byId('numbers-grid');
+    if (!grid) return;
+    const count = Array.isArray(data.numbers) ? data.numbers.length : 0;
+    const safeCount = Math.max(1, count);
+    const width = window.innerWidth;
+    let columns = Math.min(safeCount, 5);
+
+    if (width <= 768) {
+      columns = Math.min(safeCount, 2);
+    } else if (width <= 1200) {
+      columns = Math.min(safeCount, 3);
+    }
+
+    grid.style.setProperty('grid-template-columns', `repeat(${columns}, minmax(200px, 1fr))`, 'important');
+    grid.style.setProperty('justify-content', 'center');
+  };
+
   const renderNumbers = () => {
     const grid = byId('numbers-grid');
     const period = byId('numbers-period');
     if (!grid) return;
+    updateNumbersGridLayout();
     if (period) {
       period.textContent = data.period ? `(${data.period})` : '';
     }
@@ -237,13 +258,15 @@
         const description = escapeHtml(item.description);
         return `
           <div class="number-item">
-            <div class="number-value">${value}</div>
+            <div class="number-value" data-target="${value}">0</div>
             ${label ? `<div class="number-unit">${label}</div>` : ''}
             ${description ? `<div class="number-description">${description}</div>` : ''}
           </div>
         `;
       })
       .join('');
+
+    grid.querySelectorAll('.number-value').forEach(animateOdometer);
   };
 
   const newsCard = (item) => {
@@ -412,8 +435,8 @@
       '/historia-valores': 'historia-valores.html',
       '#documentos': 'documentos.html',
       '/documentos': 'documentos.html',
-      '#preencher-bopm': 'preencher-bopm.html',
-      '/preencher-bopm': 'preencher-bopm.html',
+      '#preencher-bou': 'preencher-bou.html',
+      '/preencher-bou': 'preencher-bou.html',
       '#concursos': 'concursos.html',
       '/concursos': 'concursos.html',
       '#diario-oficial': 'diario-oficial.html',
@@ -555,6 +578,38 @@
     });
   };
 
+  const setupInfoCardDropdowns = () => {
+    const toggles = document.querySelectorAll('.info-card .info-card-toggle');
+    if (!toggles.length) return;
+
+    toggles.forEach((toggle) => {
+      const card = toggle.closest('.info-card');
+      if (!card) return;
+      const targetId = toggle.getAttribute('aria-controls');
+      const body = targetId ? byId(targetId) : card.querySelector('.info-card-body');
+      if (!body) return;
+
+      const setExpanded = (expanded) => {
+        card.classList.toggle('is-open', expanded);
+        toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      };
+
+      setExpanded(true);
+
+      toggle.addEventListener('click', () => {
+        const isOpen = card.classList.contains('is-open');
+        setExpanded(!isOpen);
+      });
+
+      toggle.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggle.click();
+        }
+      });
+    });
+  };
+
   document.addEventListener('DOMContentLoaded', () => {
     rewriteNavLinks();
     setupGlobals();
@@ -569,5 +624,7 @@
     setupMobileMenu();
     setupAccessibility();
     setupModalClose();
+    setupInfoCardDropdowns();
+    window.addEventListener('resize', updateNumbersGridLayout);
   });
 })();
