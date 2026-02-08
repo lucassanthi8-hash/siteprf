@@ -1,13 +1,16 @@
-﻿(() => {
+(() => {
   'use strict';
 
   const data = {
     period: 'JANEIRO A DEZEMBRO DE 2026',
     numbers: [
-      { value: '2.810', label: 'abordagens', description: 'Realizadas' },
-      { value: '940', label: 'ocorrencias', description: 'Atendidas' },
-      { value: '67', label: 'veículos', description: 'Recuperados' },
+      { value: '2.810', label: 'ABORDAGENS REALIZADAS', icon: 'assets/img/aim.png' },
+      { value: '940', label: 'OCORRÊNCIAS ATENDIDAS', icon: 'assets/img/shield.png' },
+      { value: '675', label: 'VEÍCULOS FISCALIZADOS', icon: 'assets/img/car.png' },
+      { value: '133', label: 'REAIS EM MULTAS APLICADAS', icon: 'assets/img/cash.png' },
+      { value: '46.991', label: 'KM PATRULHADOS', icon: 'assets/img/road.png' },      
     ],
+
     news: [
       {
         title: 'Reforco no policiamento de bairro',
@@ -67,7 +70,7 @@
           image: 'assets/img/logo_inicio.png'
         },
         {
-          title: 'Exposicao historica da corporação',
+          title: 'Exposicao historica da corpora��o',
           description: 'Mostra itinerante com acervo institucional.',
           date: '28/01/2026',
           image: 'assets/img/logo_organograma.png'
@@ -256,8 +259,12 @@
         const value = escapeHtml(item.value);
         const label = escapeHtml(item.label);
         const description = escapeHtml(item.description);
+        const icon = item.icon
+          ? `<div class="number-icon"><img src="${escapeHtml(item.icon)}" alt="${label || '�cone'}" loading="lazy"></div>`
+          : '';
         return `
           <div class="number-item">
+            ${icon}
             <div class="number-value" data-target="${value}">0</div>
             ${label ? `<div class="number-unit">${label}</div>` : ''}
             ${description ? `<div class="number-description">${description}</div>` : ''}
@@ -479,14 +486,20 @@
   };
 
   const setupBannerSlider = () => {
+    const bannerSection = document.querySelector('.main-banner');
     const bannerImage = document.querySelector('.banner-image');
     if (!bannerImage) return;
 
-    const sources = [
+    const defaultSources = [
       'assets/img/banner_1.png',
       'assets/img/banner_2.png',
       'assets/img/banner_3.png'
     ];
+
+    const dataSources = bannerSection ? bannerSection.getAttribute('data-banners') : '';
+    const sources = dataSources
+      ? dataSources.split(',').map((src) => src.trim()).filter(Boolean)
+      : defaultSources;
 
     const uniqueSources = sources.filter((src, idx, arr) => src && arr.indexOf(src) === idx);
     if (uniqueSources.length < 2) return;
@@ -509,7 +522,11 @@
       }, 300);
     };
 
-    window.setInterval(swapImage, 6000);
+    const interval = bannerSection && bannerSection.dataset && bannerSection.dataset.bannerInterval
+      ? Number(bannerSection.dataset.bannerInterval)
+      : 6000;
+    const safeInterval = Number.isFinite(interval) && interval >= 2000 ? interval : 6000;
+    window.setInterval(swapImage, safeInterval);
   };
 
   const setupGlobals = () => {
@@ -594,7 +611,7 @@
         toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
       };
 
-      setExpanded(true);
+      setExpanded(card.classList.contains('is-open'));
 
       toggle.addEventListener('click', () => {
         const isOpen = card.classList.contains('is-open');

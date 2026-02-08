@@ -1,4 +1,4 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
-    <title>Login - PRF Jaguaré</title>
-    <link rel="icon" type="image/png" href="assets/img/prf.png">
-    <link rel="shortcut icon" type="image/png" href="assets/img/prf.png">
+    <title>Preencher BOU - PRF Jaguaré</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/prflogoico.ico">
     <script>
         (function() {
             try {
@@ -24,26 +23,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="top-header">
+            <header class="top-header">
         <div class="container">
             <div class="top-header-content">
-                <div class="logo-governo" style="display: flex; align-items: center; gap: 15px;">
-                    <a href="index.html" class="gov-logo-link"><img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;"></a>
-                    <div class="text-governo">
-                        <span class="sao-paulo">SÃO PAULO - JAGUARÉ</span>
-                        <span class="governo">MINISTÉRIO DA JUSTIÇA E SEGURANÇA PÚBLICA</span>
-                        <span class="slogan">POLÍCIA RODOVIÁRIA FEDERAL</span>
+                <div class="logo-governo">
+                    <a href="index.html" class="gov-logo-link">
+                        <img src="assets/img/gov_br.png" alt="Governo do Brasil" class="gov-logo">
+                    </a>
+                    <span class="gov-divider" aria-hidden="true"></span>
+                    <div class="gov-identity">
+                        <span class="gov-ministry">MINISTÉRIO DA JUSTIÇA E SEGURANÇA PÚBLICA</span>
+                        <span class="gov-agency">Polícia Rodoviária Federal</span>
                     </div>
                 </div>
                 <div class="top-header-right">
-                    <div class="accessibility">
-                        <button class="acc-btn" id="alert" aria-label="Alertas">
-                            <i class="fas fa-exclamation-triangle"></i>
-                        </button>
-                        <button class="acc-btn" id="clear-cache" aria-label="Limpar cache" onclick="if(window.cacheManager) { window.cacheManager.clearAndReload(); } else { window.location.reload(true); }" title="Limpar cache e recarregar pagina">
-                            <i class="fas fa-broom"></i>
-                        </button>
-                    </div>
                     <div class="user-auth-header">
                         <a href="login.html" id="header-login-btn" class="auth-link">
                             <i class="fas fa-sign-in-alt"></i>
@@ -53,13 +46,13 @@
                             <i class="fas fa-user-plus"></i>
                             <span>Criar Conta</span>
                         </a>
-                        <div id="header-user-menu" class="user-menu-header" style="display: none;">
+                        <div id="header-user-menu" class="user-menu-header is-hidden">
                             <span class="user-name-header"></span>
-                            <a href="/T8mUcrZCHJvFf9zDqp72td2?panel=tickets" id="header-tickets-admin-link" class="auth-link" style="display: none;">
+                            <a href="/T8mUcrZCHJvFf9zDqp72td2?panel=tickets" id="header-tickets-admin-link" class="auth-link is-hidden">
                                 <i class="fas fa-ticket-alt"></i>
                                 <span>Gerenciar Tickets</span>
                             </a>
-                            <a href="/T8mUcrZCHJvFf9zDqp72td2" id="header-admin-link" class="auth-link" style="display: none;">
+                            <a href="/T8mUcrZCHJvFf9zDqp72td2" id="header-admin-link" class="auth-link is-hidden">
                                 <i class="fas fa-cog"></i>
                                 <span>Admin</span>
                             </a>
@@ -78,40 +71,48 @@
         </div>
     </header>
 
-    <header class="main-header" id="menu">
+        <header class="main-header main-header--duna" id="menu">
         <div class="container">
-            <div class="main-header-content">
-                <nav class="main-nav">
-                    <a href="/index.html">INÍCIO</a>
-                    
+            <div class="header-row">
+
+            <!-- ESQUERDA: 3 páginas -->
+            <nav class="mini-nav mini-nav--left" aria-label="Páginas (esquerda)">
+                <a href="/index.html">INÍCIO</a>
                     <div class="nav-dropdown">
-                        <a href="#" class="nav-link-dropdown">INSTITUCIONAL</a>
+                        <a href="#" class="nav-link-dropdown" aria-haspopup="true" aria-expanded="false">INSTITUCIONAL</a>
                         <div class="dropdown-menu">
                             <a href="organograma.html">Organograma</a>
-                            <a href="capacitacao.html">Capacitação e Treinamento</a>
-                            <a href="historia-valores.html">História e Valores</a>
+                            <a href="/capacitacao.html">Capacitação e Treinamento</a>
+                            <a href="/historia-valores.html">História e Valores</a>
                         </div>
                     </div>
-                    
                     <div class="nav-dropdown">
-                        <a href="#" class="nav-link-dropdown">SERVIÇOS</a>
-                        <div class="dropdown-menu">
-                            <a href="documentos.html">Documentos</a>
-                            <a href="preencher-bou.html">Preencher BOU</a>
+                        <a href="#" class="nav-link-dropdown" aria-haspopup="true" aria-expanded="false">SERVIÇOS</a>
+                            <div class="dropdown-menu">
+                            <a href="/documentos">Documentos PRF</a>
+                            <a href="/preencher-bou.html">Preencher BOU</a>
                         </div>
                     </div>
-                    
-                    <a href="concursos.html">CONCURSOS</a>
-                    
-                    <a href="diario-oficial.html">DIÁRIO OFICIAL</a>
-                    
-                    <a href="#" class="nav-link" onclick="if(typeof window.openCorregedoriaWidget === 'function') { window.openCorregedoriaWidget(); return false; } else { window.openTicketsWidget && window.openTicketsWidget(); return false; }">CORREGEDORIA</a>
-                </nav>
-                <button class="mobile-menu-toggle" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+            </nav>
+
+            <!-- CENTRO: informação (logo + textos) -->
+            <div class="main-header-top">
+                <div class="brand-block">
+                <a href="index.html" class="brand-logo-link">
+                <img src="assets/img/prf.png" alt="PRF Jaguaré" class="brand-logo">
+                </a>
+                </div>
+            </div>
+            <!-- DIREITA: +3 páginas -->
+            <nav class="mini-nav mini-nav--right" aria-label="Páginas (direita)">
+                                <a href="/concursos">CONCURSOS</a>
+                                <a href="/diario-oficial">DIÁRIO OFICIAL</a>
+                                <a href="/corregedoria.html">CORREGEDORIA</a>
+            </nav>
             </div>
             <div class="red-line"></div>
+        </div>
+        </header>
         </div>
     </header>
 
@@ -142,6 +143,37 @@
         </div>
     </section>
 
+        <footer class="diario-footer">
+        <div class="container">
+            <div class="diario-footer-top">
+                <div class="diario-footer-brand">
+                    <img src="assets/img/prf.png" alt="Polícia Rodoviária Federal" class="diario-footer-logo">
+                    <div class="diario-footer-brand-text">
+                        <strong>Polícia Rodoviária Federal</strong>
+                        <span>Unidade Operacional Jaguaré</span>
+                        <span>São Paulo - SP</span>
+                    </div>
+                </div>
+                <div class="diario-footer-contact">
+                    <h4>Contato</h4>
+                    <p>PRF — Delegacia de Jaguaré</p>
+                    <p>Telefone: 191 (PRF)</p>
+                    <p>Emergência: 190</p>
+                </div>
+            </div>
+            <div class="diario-footer-divider" aria-hidden="true"></div>
+            <div class="diario-footer-bottom">
+                <span>© 2026 Polícia Rodoviária Federal — Todos os direitos reservados</span>
+                <img src="assets/img/gov_br.png" alt="gov.br" class="diario-footer-gov">
+            </div>
+        </div>
+    </footer>
     <script src="app.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+

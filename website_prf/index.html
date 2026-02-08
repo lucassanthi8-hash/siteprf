@@ -1,4 +1,4 @@
-﻿??ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
-    <title>Início - PRF Jaguaré</title>
-    <link rel="icon" type="image/png" href="assets/img/prf.png">
-    <link rel="shortcut icon" type="image/png" href="assets/img/prf.png">
+    <title>PRF - Jaguaré</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/prflogoico.ico">
     <script>
-        // Carrega tema ANTES do CSS para evitar flash
         (function() {
             try {
                 const savedTheme = localStorage.getItem('theme') || 'light';
@@ -22,165 +20,20 @@
         })();
     </script>
     <link rel="stylesheet" href="style.css">
-    <style>
-        
-        #ie-edit-panel {
-            position: fixed !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            z-index: 10001 !important;
-        }
-
-        body > #ie-edit-panel:not([style*="position:fixed"]),
-        #ie-edit-panel:not([style*="position:fixed"]),
-        #ie-edit-panel[style*="position:static"],
-        #ie-edit-panel[style*="position:relative"],
-        #ie-edit-panel[style*="position:absolute"] {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            height: 0 !important;
-            overflow: hidden !important;
-            position: absolute !important;
-            left: -9999px !important;
-            top: -9999px !important;
-        }
-
-        #ie-edit-panel {
-            max-height: 90vh !important;
-            overflow-y: auto !important;
-        }
-
-        body > div:last-child[id*="edit"]:not([style*="position:fixed"]) {
-            display: none !important;
-        }
-    </style>
-    <script>
-        
-        (function() {
-            'use strict';
-
-            function removeAllEditPanels() {
-                
-                const selectors = [
-                    '#ie-edit-panel',
-                    '[id*="ie-edit-panel"]',
-                    '[id*="edit-panel"]',
-                    '.ie-edit-panel'
-                ];
-                
-                selectors.forEach(function(selector) {
-                    try {
-                        const elements = document.querySelectorAll(selector);
-                        elements.forEach(function(el) {
-                            const rect = el.getBoundingClientRect();
-                            const style = window.getComputedStyle(el);
-                            const inlineStyle = el.getAttribute('style') || '';
-
-                            const isFixed = style.position === 'fixed' && inlineStyle.includes('position:fixed');
-                            const isAtBottom = rect.top > window.innerHeight * 0.7;
-                            const isVisible = style.display !== 'none' && style.visibility !== 'hidden';
-                            
-                            if (!isFixed || isAtBottom || (isVisible && !isFixed)) {
-                                
-                                el.style.cssText = 'display:none!important;visibility:hidden!important;opacity:0!important;height:0!important;overflow:hidden!important;position:absolute!important;left:-9999px!important;top:-9999px!important;';
-
-                                setTimeout(function() {
-                                    if (el.parentNode) {
-                                        el.remove();
-                                    }
-                                }, 100);
-                            }
-                        });
-                    } catch(e) {}
-                });
-
-                const overlays = document.querySelectorAll('#ie-edit-overlay, [id*="ie-edit-overlay"]');
-                overlays.forEach(function(overlay) {
-                    const panel = document.getElementById('ie-edit-panel');
-                    if (!panel || !panel.parentNode) {
-                        overlay.remove();
-                    }
-                });
-
-                if (document.body && document.body.lastElementChild) {
-                    const lastChild = document.body.lastElementChild;
-                    if (lastChild.id && lastChild.id.includes('edit')) {
-                        const rect = lastChild.getBoundingClientRect();
-                        const style = window.getComputedStyle(lastChild);
-                        if (style.position !== 'fixed' && rect.top > window.innerHeight * 0.7) {
-                            lastChild.remove();
-                        }
-                    }
-                }
-            }
-
-            removeAllEditPanels();
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', removeAllEditPanels);
-            } else {
-                removeAllEditPanels();
-            }
-
-            window.addEventListener('load', removeAllEditPanels);
-
-            setInterval(removeAllEditPanels, 300);
-
-            if (document.body) {
-                const observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        mutation.addedNodes.forEach(function(node) {
-                            if (node.nodeType === 1) {
-                                
-                                if (node.id && (node.id.includes('ie-edit') || node.id.includes('edit-panel'))) {
-                                    setTimeout(removeAllEditPanels, 10);
-                                }
-                                
-                                if (node.querySelector) {
-                                    const panel = node.querySelector('#ie-edit-panel, [id*="ie-edit-panel"]');
-                                    if (panel) {
-                                        setTimeout(removeAllEditPanels, 10);
-                                    }
-                                }
-                            }
-                        });
-                    });
-                });
-                
-                observer.observe(document.body, {
-                    childList: true,
-                    subtree: true
-                });
-            }
-
-            if (!document.body) {
-                const bodyObserver = new MutationObserver(function() {
-                    if (document.body) {
-                        removeAllEditPanels();
-                        bodyObserver.disconnect();
-                    }
-                });
-                bodyObserver.observe(document.documentElement, {
-                    childList: true,
-                    subtree: true
-                });
-            }
-        })();
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
-    <header class="top-header">
+            <header class="top-header">
         <div class="container">
             <div class="top-header-content">
-                <div class="logo-governo" style="display: flex; align-items: center; gap: 15px;">
-                    <a href="index.html" class="gov-logo-link"><img src="assets/img/gov_br.png" alt="Governo do Brasil" style="height: 80px; width: auto;"></a>
-                    <div class="text-governo">
-                        <span class="sao-paulo">SÃO PAULO - JAGUARÉ</span>
-                        <span class="governo">MINISTÉRIO DA JUSTIÇA E SEGURANÇA PÚBLICA</span>
-                        <span class="slogan">POLÍCIA RODOVIÁRIA FEDERAL</span>
+                <div class="logo-governo">
+                    <a href="index.html" class="gov-logo-link">
+                        <img src="assets/img/gov_br.png" alt="Governo do Brasil" class="gov-logo">
+                    </a>
+                    <span class="gov-divider" aria-hidden="true"></span>
+                    <div class="gov-identity">
+                        <span class="gov-ministry">MINISTÉRIO DA JUSTIÇA E SEGURANÇA PÚBLICA</span>
+                        <span class="gov-agency">Polícia Rodoviária Federal</span>
                     </div>
                 </div>
                 <div class="top-header-right">
@@ -193,13 +46,13 @@
                             <i class="fas fa-user-plus"></i>
                             <span>Criar Conta</span>
                         </a>
-                        <div id="header-user-menu" class="user-menu-header" style="display: none;">
+                        <div id="header-user-menu" class="user-menu-header is-hidden">
                             <span class="user-name-header"></span>
-                            <a href="/T8mUcrZCHJvFf9zDqp72td2?panel=tickets" id="header-tickets-admin-link" class="auth-link" style="display: none;">
+                            <a href="/T8mUcrZCHJvFf9zDqp72td2?panel=tickets" id="header-tickets-admin-link" class="auth-link is-hidden">
                                 <i class="fas fa-ticket-alt"></i>
                                 <span>Gerenciar Tickets</span>
                             </a>
-                            <a href="/T8mUcrZCHJvFf9zDqp72td2" id="header-admin-link" class="auth-link" style="display: none;">
+                            <a href="/T8mUcrZCHJvFf9zDqp72td2" id="header-admin-link" class="auth-link is-hidden">
                                 <i class="fas fa-cog"></i>
                                 <span>Admin</span>
                             </a>
@@ -218,13 +71,15 @@
         </div>
     </header>
 
-    <header class="main-header" id="menu">
+        <header class="main-header main-header--duna" id="menu">
         <div class="container">
-            <div class="main-header-content">
-                <nav class="main-nav">
-                    <a href="/index.html">INÍCIO</a>
+            <div class="header-row">
+
+            <!-- ESQUERDA: 3 páginas -->
+            <nav class="mini-nav mini-nav--left" aria-label="Páginas (esquerda)">
+                <a href="/index.html">INÍCIO</a>
                     <div class="nav-dropdown">
-                        <a href="#" class="nav-link-dropdown">INSTITUCIONAL</a>
+                        <a href="#" class="nav-link-dropdown" aria-haspopup="true" aria-expanded="false">INSTITUCIONAL</a>
                         <div class="dropdown-menu">
                             <a href="organograma.html">Organograma</a>
                             <a href="/capacitacao.html">Capacitação e Treinamento</a>
@@ -232,59 +87,54 @@
                         </div>
                     </div>
                     <div class="nav-dropdown">
-                        <a href="#" class="nav-link-dropdown">SERVIÇOS</a>
-                          <div class="dropdown-menu">
+                        <a href="#" class="nav-link-dropdown" aria-haspopup="true" aria-expanded="false">SERVIÇOS</a>
+                            <div class="dropdown-menu">
                             <a href="/documentos">Documentos PRF</a>
                             <a href="/preencher-bou.html">Preencher BOU</a>
                         </div>
                     </div>
-                    <a href="/concursos">CONCURSOS</a>
-                    <a href="/diario-oficial">DIÁRIO OFICIAL</a>
-                    <a href="#" class="nav-link" onclick="if(typeof window.openCorregedoriaWidget === 'function') { window.openCorregedoriaWidget(); return false; } else { window.openTicketsWidget && window.openTicketsWidget(); return false; }">CORREGEDORIA</a>
-                </nav>
-                <button class="mobile-menu-toggle" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+            </nav>
+
+            <!-- CENTRO: informação (logo + textos) -->
+            <div class="main-header-top">
+                <div class="brand-block">
+                <a href="index.html" class="brand-logo-link">
+                <img src="assets/img/prf.png" alt="PRF Jaguaré" class="brand-logo">
+                </a>
+                </div>
+            </div>
+            <!-- DIREITA: +3 páginas -->
+            <nav class="mini-nav mini-nav--right" aria-label="Páginas (direita)">
+                                <a href="/concursos">CONCURSOS</a>
+                                <a href="/diario-oficial">DIÁRIO OFICIAL</a>
+                                <a href="/corregedoria.html">CORREGEDORIA</a>
+            </nav>
             </div>
             <div class="red-line"></div>
         </div>
+        </header>
+        </div>
     </header>
 
-    <section class="main-banner" id="content">
+    <section class="main-banner" id="content" data-banners="assets/img/banner_1.png, assets/img/banner_2.png, assets/img/banner_3.png">
         <div class="banner-background">
             <img class="banner-image" src="assets/img/banner_1.png" alt="Banner PRF Jaguaré">
             <div class="banner-pattern-left"></div>
             <div class="banner-pattern-right"></div>
         </div>
         <div class="container">
-            <div class="banner-content">
-                <div class="banner-left">
-                    <div class="banner-emblem">
-                        <div class="banner-logo">
-                            <div class="banner-logo-text"></div>
-                            <div class="banner-200">
-                                <span class="rumo"></span>
-                                <div class="number-200"></div>
-                                <span class="anos"></span>
-                                <span class="arrow-right"></span>
-                            </div>
-                        </div>
-                        <div class="banner-slogan"></div>
-                    </div>
-                </div>
-                <div class="banner-right">
-                </div>
-            </div>
-        </div>
+             <div class="banner-slogan"></div>
+             </div>
+         </div>
     </section>
 
     <section class="prf-numbers">
         <div class="container">
             <div class="numbers-header">
-                <img src="/assets/img/prf.png" alt="Brasão PRF" class="logo-prf-menu">
-                <h2><strong>PRF</strong> EM NÚMEROS</h2>
-                <p>Acompanhe algumas estatísticas da PRF em 2026 em tempo real.</p>
-            </div>
+                <h2>PRF EM NÚMEROS</h2>
+                <div class="small-line"></div>
+                    <p class="white">Acompanhe algumas estatísticas da PRF em 2026 em tempo real.</p>
+                </div>
             <div class="numbers-grid" id="numbers-grid">
         </div>
     </section>
@@ -314,36 +164,52 @@
         </div>
     </section>
 
+        <footer class="diario-footer">
+        <div class="container">
+            <div class="diario-footer-top">
+                <div class="diario-footer-brand">
+                    <img src="assets/img/prf.png" alt="Polícia Rodoviária Federal" class="diario-footer-logo">
+                    <div class="diario-footer-brand-text">
+                        <strong>Polícia Rodoviária Federal</strong>
+                        <span>Unidade Operacional Jaguaré</span>
+                        <span>São Paulo - SP</span>
+                    </div>
+                </div>
+                <div class="diario-footer-contact">
+                    <h4>Contato</h4>
+                    <p>PRF — Delegacia de Jaguaré</p>
+                    <p>Telefone: 191 (PRF)</p>
+                    <p>Emergência: 190</p>
+                </div>
+            </div>
+            <div class="diario-footer-divider" aria-hidden="true"></div>
+            <div class="diario-footer-bottom">
+                <span>© 2026 Polícia Rodoviária Federal — Todos os direitos reservados</span>
+                <img src="assets/img/gov_br.png" alt="gov.br" class="diario-footer-gov">
+            </div>
+        </div>
+    </footer>
     <script src="app.js" defer></script>
     
-    <div id="lista-aprovados-modal" class="modal" style="display: none;">
-        <div class="modal-content" style="max-width: 800px; max-height: 90vh; overflow-y: auto; background: white; border-radius: 12px; padding: 30px;">
-            <div class="modal-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2 style="margin: 0; color: #1e3a8a;">Lista de Aprovados</h2>
-                <button class="close-modal" onclick="document.getElementById('lista-aprovados-modal').style.display = 'none'" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">&times;</button>
+    <div id="lista-aprovados-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Lista de Aprovados</h2>
+                <button class="close-modal modal-close" onclick="document.getElementById('lista-aprovados-modal').style.display = 'none'">&times;</button>
             </div>
-            <div id="lista-aprovados-content" style="padding: 20px 0; white-space: pre-wrap; font-family: monospace; line-height: 1.8; color: #333;">
+            <div id="lista-aprovados-content">
                 
             </div>
         </div>
     </div>
-    
-    <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            align-items: center;
-            justify-content: center;
-        }
-        .modal.active {
-            display: flex;
-        }
-    </style>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador AIT - Saida Formatada</title>
+
+  <link rel="stylesheet" href="styleait.css" />
+</head>
+
+<body>
+  <nav class="nav">
+    <a class="nav-link" href="bou.html">BOU / BO</a>
+    <a class="nav-link active" href="ait.html">AIT - Auto de Infracao de Transito</a>
+  </nav>
+
+  <main class="app">
+
+    <!-- ENTRADA -->
+    <section class="card">
+      <header class="card-header">
+        <h2>Entrada de Dados</h2>
+      </header>
+
+      <div class="card-body">
+        <div class="grid">
+          <div>
+            <label for="numeroAit">Numero do AIT</label>
+            <input id="numeroAit" type="text" placeholder="xxx/2026" />
+          </div>
+
+          <div>
+            <label for="nomeInfrator">Nome do Infrator</label>
+            <input id="nomeInfrator" type="text" placeholder="Nome do Infrator" />
+          </div>
+
+          <div>
+            <label for="rgInfrator">RG do Infrator</label>
+            <input id="rgInfrator" type="text" placeholder="RG do Infrator" />
+          </div>
+
+          <div>
+            <label for="infracao">Infracao cometida</label>
+            <input id="infracao" type="text" placeholder="Descricao da infracao" />
+          </div>
+
+          <div>
+            <label for="valorMulta">Valor da multa</label>
+            <input id="valorMulta" type="text" placeholder="R$" />
+          </div>
+
+          <div>
+            <label for="apreensao">Houve apreensao do veiculo</label>
+            <input id="apreensao" type="text" placeholder="Sim/Não" />
+          </div>
+
+          <div>
+            <label for="policial">Policial Responsavel</label>
+            <input id="policial" type="text" placeholder="Nome do Policial" />
+          </div>
+
+          <div>
+            <label for="datahora">Data e horario</label>
+            <input id="datahora" type="text" placeholder="Dia/Mes/Ano e horario" />
+          </div>
+
+          <div>
+            <label for="local">Local da autuacao</label>
+            <input id="local" type="text" placeholder="Local" />
+          </div>
+
+          <div>
+            <label for="marcaModelo">Marca e Modelo</label>
+            <input id="marcaModelo" type="text" placeholder="Marca e Modelo" />
+          </div>
+
+          <div>
+            <label for="emplacamento">Emplacamento</label>
+            <input id="emplacamento" type="text" placeholder="Placa" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="btnGerar" class="btn-primary" type="button">Gerar</button>
+          <button id="btnLimparCampos" class="btn-secondary" type="button">Limpar Campos</button>
+        </div>
+
+        <p class="hint">Dica: o AIT gerado ficara na “Saida Formatada” a direita (ou abaixo no celular).</p>
+      </div>
+    </section>
+
+    <!-- SAIDA -->
+    <section class="card">
+      <header class="card-header">
+        <h2>Saida Formatada</h2>
+        <span id="status" class="status">Pronto</span>
+      </header>
+
+      <div class="card-body">
+        <textarea id="saidaFormatada" class="saida" readonly></textarea>
+
+        <div class="actions">
+          <button id="btnCopiar" class="btn-primary" type="button">Copiar</button>
+          <button id="btnLimparSaida" class="btn-danger" type="button">Limpar Saida</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="ait.js"></script>
+</body>
+</html>

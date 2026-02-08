@@ -116,41 +116,50 @@
         </div>
     </header>
 
-    <section class="latest-news info-section concursos-section">
+    <section class="main-banner" id="content" data-banners="assets/img/banner_1.png, assets/img/banner_2.png, assets/img/banner_3.png">
+        <div class="banner-background">
+            <img class="banner-image" src="assets/img/banner_1.png" alt="Banner PRF JaguarÃ©">
+            <div class="banner-pattern-left"></div>
+            <div class="banner-pattern-right"></div>
+        </div>
+        <div class="container">
+             <div class="banner-slogan"></div>
+             </div>
+         </div>
+    </section>
+
+    <section class="prf-numbers">
+        <div class="container">
+            <div class="numbers-header">
+                <h2>PRF EM NÃšMEROS</h2>
+                <div class="small-line"></div>
+                    <p class="white">Acompanhe algumas estatÃ­sticas da PRF em 2026 em tempo real.</p>
+                </div>
+            <div class="numbers-grid" id="numbers-grid">
+        </div>
+    </section>
+
+    <section class="latest-news" id="noticias">
         <div class="container">
             <div class="news-header">
-                <h2>Concursos</h2>
+                <h2>NOTÃCIAS RECENTES</h2>
                 <div class="red-line-news"></div>
             </div>
-            <div class="concurso-grid">
-                <article class="concurso-card">
-                    <div class="concurso-image">
-                        <img src="assets/img/edital_aberto.png" alt="Concurso PRF Jaguaré">
-                    </div>
-                    <div class="concurso-content">
-                        <span class="concurso-badge">Concurso Público</span>
-                        <h3 class="concurso-title">Concurso PRF Jaguaré</h3>
-                        <ul>
-                            <strong>REQUISITOS PRINCIPAIS</strong>
-                            <li>Idade mínima de 18 anos completos.</li>
-                            <li>Ensino Superior Completo.</li>
-                            <li>Estar em pleno gozo dos direitos civis.</li>
-                            <li>Não possuir antecedente criminal e ter conduta ilibada.</li>
-                            <li>Possuir Carteira Nacional de Habilitação (CNH) Categoria B ou superior.</li>
-                        </ul>
-                        <div class="concurso-meta">
-                            <span><strong>Publicado em:</strong> 02/02/2026</span>
-                            <span><strong>Período do concurso:</strong> xx/02/2026 à xx/02/2026</span>
-                        </div>
-                        <div class="concurso-actions">
-                            <a class="concurso-btn concurso-btn-primary" href="https://forms.gle/rqusVEhy7Yc63MzZ8" target="_blank" rel="noopener">Acesse o concurso</a>
-                            <a class="concurso-btn concurso-btn-secondary" href="">Lista de aprovados</a>
-                            <a class="concurso-btn concurso-btn-tertiary" href="">Manual de Estudos</a>
-                        </div>
-                    </div>
-                </article>
-                <br>
+            <div class="news-grid" id="news-grid">
+                
+                </button>
 
+            </div>
+        </div>
+    </section>
+
+    <section class="activities education">
+        <div class="container">
+            <div class="activities-header">
+                <h2>NotÃ­cias <strong>Institucionais</strong>
+                <div class="red-line-news"></div>
+            </div>
+            <div class="activities-grid" id="education-activities-grid">
             </div>
         </div>
     </section>
@@ -181,6 +190,18 @@
         </div>
     </footer>
     <script src="app.js" defer></script>
+    
+    <div id="lista-aprovados-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Lista de Aprovados</h2>
+                <button class="close-modal modal-close" onclick="document.getElementById('lista-aprovados-modal').style.display = 'none'">&times;</button>
+            </div>
+            <div id="lista-aprovados-content">
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

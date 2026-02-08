@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Relatório - Saída Formatada</title>
+
+  <link rel="stylesheet" href="styleait.css" />
+</head>
+
+<body>
+  <nav class="nav">
+    <a class="nav-link active" href="bou.html">BOU / BO</a>
+    <a class="nav-link" href="ait.html">AIT - Auto de Infracao de Transito</a>
+  </nav>
+
+  <main class="app">
+
+    <!-- ENTRADA -->
+    <section class="card">
+      <header class="card-header">
+        <h2>Entrada de Dados</h2>
+      </header>
+
+      <div class="card-body">
+        <div class="grid">
+          <div>
+            <label for="titulo">TÍTULO DO BOU</label>
+            <input id="titulo" type="text" placeholder="BOU xxx/2026 (unidade)" />
+          </div>
+
+          <div>
+            <label for="unidade">Unidade</label>
+            <input id="unidade" type="text" placeholder="Grupamento - Prefixo" />
+          </div>
+
+          <div>
+            <label for="equipe">Equipe</label>
+            <input id="equipe" type="text" placeholder="Prefixo" />
+          </div>
+
+          <div>
+            <label for="motorista">Motorista</label>
+            <input id="motorista" type="text" placeholder="Nome do Motorista" />
+          </div>
+
+          <div>
+            <label for="chefe">Chefe de viatura</label>
+            <input id="chefe" type="text" placeholder="Nome do Chefe" />
+          </div>
+
+          <div>
+            <label for="terceiro">Terceiro Homem</label>
+            <input id="terceiro" type="text" value="N/A"/>
+          </div>
+
+          <div>
+            <label for="quarto">Quarto Homem</label>
+            <input id="quarto" type="text" value="N/A"/>
+          </div>
+
+          <div>
+            <label for="nomeAcusado">Nome do acusado</label>
+            <input id="nomeAcusado" type="text" placeholder="Nome do Acusado" />
+          </div>
+
+          <div>
+            <label for="rgAcusado">RG do acusado</label>
+            <input id="rgAcusado" type="text" placeholder="RG do acusado" />
+          </div>
+
+          <div>
+            <label for="natureza">Natureza da Ocorrência</label>
+            <input id="natureza" type="text" placeholder="Artigos imputados" />
+          </div>
+
+          <div class="grid-span">
+            <button id="btnToggleAcusado2" class="btn-secondary btn-toggle" type="button" aria-expanded="false" aria-controls="acusadoExtra">
+              Adicionar segundo acusado
+            </button>
+          </div>
+
+          <div id="acusadoExtra" class="extra-section" hidden>
+            <div class="extra-grid">
+              <div>
+                <label for="nomeAcusado2">Nome do acusado (2)</label>
+                <input id="nomeAcusado2" type="text" placeholder="Nome do acusado (2)" />
+              </div>
+
+              <div>
+                <label for="rgAcusado2">RG do acusado (2)</label>
+                <input id="rgAcusado2" type="text" placeholder="RG do acusado (2)" />
+              </div>
+
+              <div>
+                <label for="natureza2">Natureza da Ocorrência (2)</label>
+                <input id="natureza2" type="text" placeholder="Artigos imputados (2)" />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label for="datahora">Data e horário aproximado</label>
+            <input id="datahora" type="text" placeholder="Dia/Mes/Ano e horário" />
+          </div>
+
+          <div>
+            <label for="local">Local exato</label>
+            <input id="local" type="text" placeholder="Rua e ponto de referência" />
+          </div>
+
+          <div style="grid-column: 1 / -1;">
+            <label for="relato">Relato dos Fatos</label>
+            <textarea id="relato" placeholder="Relato da ocorrência"></textarea>
+          </div>
+
+          <div style="grid-column: 1 / -1;">
+            <label for="envolvidos">Pessoas envolvidas</label>
+            <input id="envolvidos" type="text" placeholder="Insira aqui vítimas e testemunhas com Nome - RG" />
+          </div>
+
+          <div style="grid-column: 1 / -1;">
+            <label for="acoes">Ações dos policiais e do indivíduo</label>
+            <textarea id="acoes" placeholder="Houve uso de força? O "></textarea>
+          </div>
+
+          <div>
+            <label for="desacato">Desacato/Ameaça</label>
+            <input id="desacato" type="text" placeholder="Houve desacato?" />
+          </div>
+
+          <div>
+            <label for="resultado">Resultado da abordagem</label>
+            <input id="resultado" type="text" placeholder="Condução, encaminhamento, orientação" />
+          </div>
+
+          <div>
+            <label for="material">Material Apreendido</label>
+            <input id="material" type="text" placeholder="N/A" />
+          </div>
+
+          <div>
+            <label for="veiculo">Veículo Apreendido</label>
+            <input id="veiculo" type="text" placeholder="Marca e modelo" />
+          </div>
+
+          <div>
+            <label for="corVeiculo">Coloração</label>
+            <input id="corVeiculo" type="text" placeholder="Coloração" />
+          </div>
+
+          <div>
+            <label for="assinatura">Assinatura do responsável</label>
+            <input id="assinatura" type="text" placeholder="Nome Sobrenome, Cargo - Iniciais" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="btnGerar" class="btn-primary" type="button">Gerar</button>
+          <button id="btnLimparCampos" class="btn-secondary" type="button">Limpar Campos</button>
+        </div>
+
+        <p class="hint">Dica: o relatório gerado ficará na “Saída Formatada” à direita (ou abaixo no celular).</p>
+      </div>
+    </section>
+
+    <!-- SAÍDA -->
+    <section class="card">
+      <header class="card-header">
+        <h2>Saída Formatada</h2>
+        <span id="status" class="status">Pronto</span>
+      </header>
+
+      <div class="card-body">
+        <!-- ✅ Saída grande (dobrada) -->
+        <textarea id="saidaFormatada" class="saida" readonly></textarea>
+
+        <!-- ✅ Botões abaixo da saída -->
+        <div class="actions">
+          <button id="btnCopiar" class="btn-primary" type="button">Copiar</button>
+          <button id="btnLimparSaida" class="btn-danger" type="button">Limpar Saída</button>
+          <button id="btnChatgpt" class="btn-secondary" type="button">ChatGPT</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
