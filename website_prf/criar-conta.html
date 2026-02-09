@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
-    <title>Preencher BOU - PRF Jaguaré</title>
+    <title>Credenciamento - PRF Jaguare</title>
     <link rel="icon" type="image/x-icon" href="assets/img/prflogoico.ico">
     <script>
         (function() {
@@ -90,7 +90,6 @@
                         <a href="#" class="nav-link-dropdown" aria-haspopup="true" aria-expanded="false">SERVIÇOS</a>
                             <div class="dropdown-menu">
                             <a href="/documentos">Documentos PRF</a>
-                            <a href="/preencher-bou.html">Preencher BOU</a>
                         </div>
                     </div>
             </nav>
@@ -116,46 +115,45 @@
         </div>
     </header>
 
-    <section class="latest-news info-section auth-section">
-        <div class="container">
-            <div class="news-header">
-                <h2>Criar Conta</h2>
-                <div class="red-line-news"></div>
-                <p class="auth-subtitle">Cadastro rapido com suporte para SQL, Java e outras tecnologias.</p>
-            </div>
-            <div class="info-grid">
-                <article class="info-card auth-card">
-                    <h3>Cadastro de acesso</h3>
-                    <form class="auth-form">
-                        <div class="modal-form-group">
-                            <label for="register-name">Nome completo</label>
-                            <input type="text" id="register-name" name="name" placeholder="Nome e sobrenome" autocomplete="name">
+    <section class="latest-news info-section auth-section auth-sei">
+        <div class="container auth-sei-container">
+            <div class="auth-card-sei auth-card-sei--wide">
+                <div class="auth-tabs">
+                    <a class="auth-tab" href="login.html">ENTRAR</a>
+                    <a class="auth-tab is-active" href="criar-conta.html">CREDENCIAMENTO</a>
+                </div>
+                <div class="auth-panel auth-panel--scroll">
+                    <div class="auth-photo">
+                        <button class="auth-photo-btn" type="button">
+                            <i class="fas fa-camera"></i>
+                            <span>FOTO</span>
+                        </button>
+                    </div>
+                    <form class="auth-form-sei">
+                        <label class="auth-label" for="register-name">NOME OFICIAL</label>
+                        <div class="auth-input">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="register-name" name="name" placeholder="Ex: Joao Silva" autocomplete="name">
                         </div>
-                        <div class="modal-form-group">
-                            <label for="register-email">Email institucional</label>
-                            <input type="email" id="register-email" name="email" placeholder="seuemail@prf.gov.br" autocomplete="email">
+
+                        <label class="auth-label" for="register-email">EMAIL INSTITUCIONAL</label>
+                        <div class="auth-input auth-input-suffix">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" id="register-email" name="email" placeholder="nome.sobrenome" autocomplete="email">
+                            <span class="auth-suffix">@prf.gov</span>
                         </div>
-                        <div class="modal-form-group">
-                            <label for="register-id">Matricula</label>
-                            <input type="text" id="register-id" name="matricula" placeholder="Numero de matricula" autocomplete="off">
+
+                        <label class="auth-label" for="register-password">SENHA</label>
+                        <div class="auth-input">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="register-password" name="password" placeholder="********" autocomplete="new-password">
                         </div>
-                        <div class="modal-form-group">
-                            <label for="register-password">Senha</label>
-                            <input type="password" id="register-password" name="password" placeholder="Crie uma senha" autocomplete="new-password">
-                        </div>
-                        <div class="modal-form-group">
-                            <label for="register-password-confirm">Confirmar senha</label>
-                            <input type="password" id="register-password-confirm" name="password_confirm" placeholder="Repita a senha" autocomplete="new-password">
-                        </div>
-                        <button type="button" class="modal-btn">Criar conta</button>
+
+                        <button type="button" class="auth-btn-sei auth-btn-sei--gold">
+                            SOLICITAR ACESSO
+                        </button>
                     </form>
-                    <p class="auth-helper">Ja possui acesso? <a href="login.html">Fazer login</a></p>
-                </article>
-                <article class="info-card">
-                    <h3>Integracao com sistemas</h3>
-                    <p>Suporte a SQL (MySQL, PostgreSQL, SQL Server), Java (Spring), Node.js, Python e PHP.</p>
-                    <p>Conecte com APIs REST, SSO e rotinas internas com validacao de perfil.</p>
-                </article>
+                </div>
             </div>
         </div>
     </section>
@@ -188,8 +186,6 @@
     <script src="app.js" defer></script>
 </body>
 </html>
-
-
 
 
 

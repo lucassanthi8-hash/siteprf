@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
-    <title>Preencher BOU - PRF Jaguaré</title>
+    <title>Login - PRF Jaguare</title>
     <link rel="icon" type="image/x-icon" href="assets/img/prflogoico.ico">
     <script>
         (function() {
@@ -90,7 +90,6 @@
                         <a href="#" class="nav-link-dropdown" aria-haspopup="true" aria-expanded="false">SERVIÇOS</a>
                             <div class="dropdown-menu">
                             <a href="/documentos">Documentos PRF</a>
-                            <a href="/preencher-bou.html">Preencher BOU</a>
                         </div>
                     </div>
             </nav>
@@ -116,29 +115,40 @@
         </div>
     </header>
 
-    <section class="latest-news info-section auth-section">
-        <div class="container">
-            <div class="news-header">
-                <h2>Login</h2>
-                <div class="red-line-news"></div>
-                <p class="auth-subtitle">Acesso seguro com suporte para SQL, Java e outras tecnologias.</p>
-            </div>
-            <div class="info-grid">
-                <article class="info-card auth-card">
-                    <h3>Entrar no portal</h3>
-                    <form class="auth-form">
-                        <div class="modal-form-group">
-                            <label for="login-email">Email institucional</label>
-                            <input type="email" id="login-email" name="email" placeholder="seuemail@prf.gov.br" autocomplete="username">
+    <section class="latest-news info-section auth-section auth-sei">
+        <div class="container auth-sei-container">
+            <div class="auth-card-sei">
+                <div class="auth-tabs">
+                    <a class="auth-tab is-active" href="login.html">ENTRAR</a>
+                    <a class="auth-tab" href="criar-conta.html">CREDENCIAMENTO</a>
+                </div>
+                <div class="auth-panel">
+                    <form class="auth-form-sei">
+                        <label class="auth-label" for="login-email">EMAIL INSTITUCIONAL</label>
+                        <div class="auth-input">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="login-email" name="email" placeholder="seu.email@prf.gov" autocomplete="username">
                         </div>
-                        <div class="modal-form-group">
-                            <label for="login-password">Senha</label>
-                            <input type="password" id="login-password" name="password" placeholder="Sua senha" autocomplete="current-password">
+
+                        <div class="auth-row">
+                            <label class="auth-label" for="login-password">SENHA DE ACESSO</label>
+                            <a class="auth-forgot" href="#">Esqueceu a senha?</a>
                         </div>
-                        <button type="button" class="modal-btn">Entrar</button>
+                        <div class="auth-input">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="login-password" name="password" placeholder="********" autocomplete="current-password">
+                        </div>
+
+                        <label class="auth-check">
+                            <input type="checkbox" checked>
+                            Manter conectado
+                        </label>
+
+                        <button type="button" class="auth-btn-sei">
+                            REALIZAR LOGIN <i class="fas fa-arrow-right"></i>
+                        </button>
                     </form>
-                    <p class="auth-helper">Ainda não tem conta? <a href="criar-conta.html">Criar conta</a></p>
-                </article>
+                </div>
             </div>
         </div>
     </section>
